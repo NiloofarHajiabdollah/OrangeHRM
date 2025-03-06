@@ -3,8 +3,9 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import random
-from selenium import webdriver
+import time
 import pandas as pd
+from selenium import webdriver
 from pages.login_page import LoginPage
 from pages.admin_page import AdminPage
 from pages.add_user_page import AddUserPage
@@ -13,6 +14,7 @@ from pages.logout import Logout
 
 driver = webdriver.Chrome()
 driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+time.sleep(3)
 driver.maximize_window()
 
 df = pd.read_excel("user_data.xlsx")
